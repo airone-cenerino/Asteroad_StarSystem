@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Asteroad
+namespace AR
 {
     namespace StarSystem
     {
