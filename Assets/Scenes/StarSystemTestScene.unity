@@ -1530,11 +1530,6 @@ PrefabInstance:
       propertyPath: canvasRectTransform
       value: 
       objectReference: {fileID: 1036969944}
-    - target: {fileID: 4613256041771449638, guid: b4d9f1ea4bded294c9a236570bfdaced,
-        type: 3}
-      propertyPath: starJudgementDistance
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d9f1ea4bded294c9a236570bfdaced, type: 3}
 --- !u!1001 &7264000963574746427

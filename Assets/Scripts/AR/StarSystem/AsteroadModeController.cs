@@ -14,7 +14,7 @@ namespace AR
 
             private StarManager starManager;
 
-            private GameObject connectableNearestStar;    // 現フレームでの一番近い結べる星
+            private GameObject activatableNearestStar;    // 現フレームでの一番近い結べる星
             private GameObject[] stars;
             private Vector2 canvasSize;                 // Canvasのサイズ
 
@@ -30,7 +30,8 @@ namespace AR
             // アステロードモード中、毎フレーム呼ばれる
             public void MyUpdate()
             {
-                connectableNearestStar = getConnectableNearestStar();   // 結ぶことのできる一番カーソルから近い星を取得
+                activatableNearestStar = getConnectableNearestStar();   // 結ぶことのできる一番カーソルから近い星を取得
+                Debug.Log(activatableNearestStar);
 
             }
 
@@ -41,10 +42,10 @@ namespace AR
 
             private GameObject getConnectableNearestStar()
             {
-                Dictionary<GameObject, float> starDistanceTable = GetActivatableStarTable();      // カーソルから一定範囲内の使える星をゲット
-                if (starDistanceTable.Any())  // 空でなければ
+                Dictionary<GameObject, float> activatableStarDistanceTable = GetActivatableStarTable();      // カーソルから一定範囲内の使える星をゲット
+                if (activatableStarDistanceTable.Any())  // 空でなければ
                 {
-                    return starDistanceTable.Aggregate((x, y) => x.Value < y.Value ? x : y).Key;  // 近い星を返す
+                    return activatableStarDistanceTable.Aggregate((x, y) => x.Value < y.Value ? x : y).Key;  // 近い星を返す
                 }
                 else
                 {
@@ -54,22 +55,22 @@ namespace AR
 
             private Dictionary<GameObject, float> GetActivatableStarTable()
             {
-                var StarDistanceTable = GetInRangeStarDistanceTable();                          // 範囲内の星取得
+                var inRangeStarDistanceTable = GetInRangeStarDistanceTable();                          // 範囲内の星取得
 
-                List<GameObject> keyList = new List<GameObject>(StarDistanceTable.Keys);        // 辞書からkeyだけをコピーしてlist作成   
+                List<GameObject> keyList = new List<GameObject>(inRangeStarDistanceTable.Keys);        // 辞書からkeyだけをコピーしてlist作成   
 
                 // 繋げられない星の情報はいらないので捨てる
                 foreach (GameObject key in keyList)
                 {
                     if(starManager.ActiveStar != null) // 繋げられるか確認
                     {
-                        //if (!dataStructureProvisional.DataStructure(starManager.ActiveStar.GetComponent<StarInfo>().StarID, key.GetComponent<StarInfo>().StarID))    // 繋げられないとき
-                        //{
-                        //    StarDistanceTable.Remove(key);
-                        //}
+                        if (!starManager.ActiveStar.GetComponent<StarInfo>().connectableStars.Contains(key))    // 繋げられないとき
+                        {
+                            inRangeStarDistanceTable.Remove(key);
+                        }
                     }
                 }
-                return StarDistanceTable;
+                return inRangeStarDistanceTable;
             }
 
 

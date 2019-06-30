@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRectTransform: {fileID: 0}
-  starJudgementDistance: 0
+  starJudgementDistance: 0.08
 --- !u!114 &4613256041771449641
 MonoBehaviour:
   m_ObjectHideFlags: 0
