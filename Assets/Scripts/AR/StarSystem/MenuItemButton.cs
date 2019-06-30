@@ -7,7 +7,7 @@ namespace AR
 {
     namespace StarSystem
     {
-        public class MenuItemTest : MonoBehaviour
+        public class MenuItemButton : MonoBehaviour
         {
             [MenuItem("CustomMenu/ConnectStars")]
             static void ConnectStars()

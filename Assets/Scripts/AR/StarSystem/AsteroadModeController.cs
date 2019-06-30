@@ -12,16 +12,20 @@ namespace AR
             [SerializeField] private RectTransform canvasRectTransform;
             [SerializeField] private float starJudgementDistance;
 
+            private ConstellationLineManager constellationLineManager;
+            private GuideLineManager guideLineManager;
             private StarManager starManager;
 
-            private GameObject activatableNearestStar;    // 現フレームでの一番近い結べる星
+
+            private GameObject lastNearestStar = null;          // 1フレーム前の一番近い星
+            private GameObject activatableNearestStar = null;   // 現フレームでの一番近い結べる星
             private GameObject[] stars;
-            private Vector2 canvasSize;                 // Canvasのサイズ
-
-
+            private Vector2 canvasSize;                     // Canvasのサイズ
 
             private void Start()
             {
+                constellationLineManager = GetComponent<ConstellationLineManager>();
+                guideLineManager = GetComponent<GuideLineManager>();
                 starManager = GetComponent<StarManager>();
                 canvasSize = canvasRectTransform.sizeDelta;             // キャンバスの大きさを取得
                 stars = GameObject.FindGameObjectsWithTag("Star");      // Starタグのオブジェクトをすべて取得
@@ -31,8 +35,20 @@ namespace AR
             public void MyUpdate()
             {
                 activatableNearestStar = getConnectableNearestStar();   // 結ぶことのできる一番カーソルから近い星を取得
-                Debug.Log(activatableNearestStar);
 
+                if (Input.GetMouseButtonDown(0) && activatableNearestStar!=null)
+                {
+                    constellationLineManager.DrawLine(activatableNearestStar); // 星座線を引く
+                }
+
+
+
+                if(lastNearestStar != activatableNearestStar)
+                {
+                    guideLineManager.ControlLine(activatableNearestStar);
+                }
+
+                lastNearestStar = activatableNearestStar;
             }
 
             public void AllDestroy()
@@ -40,6 +56,7 @@ namespace AR
 
             }
 
+            #region
             private GameObject getConnectableNearestStar()
             {
                 Dictionary<GameObject, float> activatableStarDistanceTable = GetActivatableStarTable();      // カーソルから一定範囲内の使える星をゲット
@@ -97,7 +114,7 @@ namespace AR
 
                 return StarDistanceTable;
             }
-
+            #endregion
         }
     }
 }
