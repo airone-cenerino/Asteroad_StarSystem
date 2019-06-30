@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d82f9af5cc975d42956c990dfdc9cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linePrefab: {fileID: 0}
   linesParent: {fileID: 0}
+  linePrefab: {fileID: 3090496757051928927, guid: 0f044ec4e8a2a6e4da2b2c6e488684db,
+    type: 3}
 --- !u!114 &2322670652277646608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3b34d2a88af9f4aaa36e5d53864d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linesParent: {fileID: 0}
   linePrefab: {fileID: 2146557014236773615, guid: d64d15788663b364289d4edb451f1425,
     type: 3}
-  linesParent: {fileID: 0}

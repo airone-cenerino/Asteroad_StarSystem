@@ -8,10 +8,12 @@ namespace AR
     {
         public class GuideLineManager : LineManager
         {
+            private ConstellationLineManager constellationLineManager;
             public GameObject GuideLine { get; private set; }       // ガイドライン
 
             private void Start()
             {
+                constellationLineManager = GetComponent<ConstellationLineManager>();
                 starManager = GetComponent<StarManager>();
             }
 
@@ -26,16 +28,24 @@ namespace AR
 
                 if (starManager.ActiveStar == null || connectStar == null) return;
 
-                //// すでに星座線があった時
-                //List<GameObject> stars1 = new List<GameObject>() { starManager.ActiveStar, availableNearestStar };
-                //List<GameObject> stars2 = new List<GameObject>() { availableNearestStar, starManager.ActiveStar };
-                //if (constellationLineManager.constellationLinePairStars.MyContains(stars1) ||
-                //    constellationLineManager.constellationLinePairStars.MyContains(stars2))
-                //{
-                //    return;
-                //}
+                // すでに星座線があった時
+                List<GameObject> stars1 = new List<GameObject>() { starManager.ActiveStar, connectStar };
+                List<GameObject> stars2 = new List<GameObject>() { connectStar, starManager.ActiveStar };
+                if (constellationLineManager.constellationLinePairStars.MyContains(stars1) ||
+                    constellationLineManager.constellationLinePairStars.MyContains(stars2))
+                {
+                    return;
+                }
 
                 GuideLine = GenerateLine(connectStar);    // 点線生成
+            }
+
+            public void GuideLineDestroy()
+            {
+                if (GuideLine != null)
+                {
+                    Destroy(GuideLine);
+                }
             }
         }
     }

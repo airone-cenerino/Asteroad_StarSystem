@@ -19,6 +19,7 @@ namespace AR
 
             private GameObject lastNearestStar = null;          // 1フレーム前の一番近い星
             private GameObject activatableNearestStar = null;   // 現フレームでの一番近い結べる星
+            private GameObject nearestStar;                     // 範囲内でマウスに一番近い星
             private GameObject[] stars;
             private Vector2 canvasSize;                     // Canvasのサイズ
 
@@ -36,9 +37,15 @@ namespace AR
             {
                 activatableNearestStar = getConnectableNearestStar();   // 結ぶことのできる一番カーソルから近い星を取得
 
-                if (Input.GetMouseButtonDown(0) && activatableNearestStar!=null)
+                Debug.Log(activatableNearestStar);
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    constellationLineManager.DrawLine(activatableNearestStar); // 星座線を引く
+                    constellationLineManager.ControlLine(activatableNearestStar, nearestStar); // 星座線を引く
+                }
+                if (Input.GetMouseButtonDown(1))
+                {
+                    constellationLineManager.Cancel();
                 }
 
 
@@ -96,6 +103,8 @@ namespace AR
             {
                 Vector3 mouseScreenPos = Input.mousePosition;                               // カーソル位置取得(左下原点)
                 Vector3 mouseCanvasPos = Camera.main.ScreenToViewportPoint(mouseScreenPos); // canvasの大きさを(1,1)として座標を変換
+                GameObject nearestInRangeStar = null;
+                float minDistance = 10f;
 
                 var StarDistanceTable = new Dictionary<GameObject, float>();                // 星と距離を格納しておくテーブル
 
@@ -108,9 +117,14 @@ namespace AR
                     if (mouseToStarDistance > starJudgementDistance) continue;                          // 判定距離外の星はリストに入れない
 
                     StarDistanceTable.Add(star, mouseToStarDistance);                                   // 星と距離を格納
+
+                    if(mouseToStarDistance < minDistance)
+                    {
+                        nearestInRangeStar = star;
+                    }
                 }
 
-                // NearestStar = StarDistanceTable.Aggregate((x, y) => x.Value < y.Value ? x : y).Key;  // 一番近い星を格納しておく
+                nearestStar = nearestInRangeStar;     // 一番近い星を格納しておく
 
                 return StarDistanceTable;
             }
