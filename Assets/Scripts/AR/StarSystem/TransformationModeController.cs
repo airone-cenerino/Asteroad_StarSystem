@@ -6,9 +6,9 @@ namespace AR
 {
     namespace StarSystem
     {
-        public class ObjectModeController : MonoBehaviour
+        public class TransformationModeController : MonoBehaviour
         {
-            // オブジェクトモード中、毎フレーム呼ばれる
+            // 星座変身モード中、毎フレーム呼ばれる
             public void MyUpdate()
             {
 

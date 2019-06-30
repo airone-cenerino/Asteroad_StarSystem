@@ -8,22 +8,22 @@ namespace AR
     {
         public enum MODE
         {
-            Constellation,
-            Object
+            Transformation,
+            Asteroad
         }
 
         public class ModeManager : MonoBehaviour
         {
-            private ObjectModeController objectModeController;
-            private TransformModeController transformModeController;
+            private AsteroadModeController asteroadModeController;
+            private TransformationModeController transformationModeController;
 
-            private MODE mode = MODE.Object;        // 現在のモード(変身モードかオブジェクトモードか)
+            private MODE mode = MODE.Asteroad;      // 現在のモード(変身モードかアステロードモードか)
             private bool isActivate = true;         // 変身かオブジェクトを使用可能か
 
             private void Start()
             {
-                objectModeController = GetComponent<ObjectModeController>();
-                transformModeController = GetComponent<TransformModeController>();
+                asteroadModeController = GetComponent<AsteroadModeController>();
+                transformationModeController = GetComponent<TransformationModeController>();
             }
 
             private void Update()
@@ -32,11 +32,11 @@ namespace AR
                 {
                     switch (mode)
                     {
-                        case MODE.Object:
-                            objectModeController.MyUpdate();
+                        case MODE.Asteroad:
+                            asteroadModeController.MyUpdate();
                             break;
-                        case MODE.Constellation:
-                            transformModeController.MyUpdate();
+                        case MODE.Transformation:
+                            transformationModeController.MyUpdate();
                             break;
                     }
                 }
@@ -54,11 +54,11 @@ namespace AR
             {
                 switch (mode)
                 {
-                    case MODE.Object:
-                        objectModeController.AllDestroy();
+                    case MODE.Asteroad:
+                        asteroadModeController.AllDestroy();
                         break;
-                    case MODE.Constellation:
-                        transformModeController.AllDestroy();
+                    case MODE.Transformation:
+                        transformationModeController.AllDestroy();
                         break;
                 }
                 isActivate = false;
