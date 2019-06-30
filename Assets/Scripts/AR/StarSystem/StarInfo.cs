@@ -19,7 +19,7 @@ namespace AR
                 ActiveMarker.SetActive(true);
             }
 
-            public void DisActivate()
+            public void Deactivate()
             {
                 ActiveMarker.SetActive(false);
             }

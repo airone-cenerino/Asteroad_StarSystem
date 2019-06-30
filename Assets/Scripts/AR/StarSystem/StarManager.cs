@@ -17,7 +17,7 @@ namespace AR
                 if (ActiveStar != null)
                 {
                     LastActiveStar = ActiveStar;
-                    ActiveStar.GetComponent<StarInfo>().DisActivate();  // 今までのactiveStarをdisactivate
+                    ActiveStar.GetComponent<StarInfo>().Deactivate();  // 今までのactiveStarをdisactivate
                 }
                 ActiveStar = nextActiveStar;
                 ActiveStar.GetComponent<StarInfo>().Activate();
@@ -29,7 +29,7 @@ namespace AR
                 if (ActiveStar != null)
                 {
                     LastActiveStar = ActiveStar;
-                    ActiveStar.GetComponent<StarInfo>().DisActivate();
+                    ActiveStar.GetComponent<StarInfo>().Deactivate();
                     ActiveStar = null;
                 }
             }
