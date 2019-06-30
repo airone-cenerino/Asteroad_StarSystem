@@ -37,8 +37,6 @@ namespace AR
             {
                 activatableNearestStar = getConnectableNearestStar();   // 結ぶことのできる一番カーソルから近い星を取得
 
-                Debug.Log(activatableNearestStar);
-
                 if (Input.GetMouseButtonDown(0))
                 {
                     constellationLineManager.ControlLine(activatableNearestStar, nearestStar); // 星座線を引く
@@ -47,8 +45,10 @@ namespace AR
                 {
                     constellationLineManager.Cancel();
                 }
-
-
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    constellationLineManager.Decide();
+                }
 
                 if(lastNearestStar != activatableNearestStar)
                 {
@@ -60,7 +60,8 @@ namespace AR
 
             public void AllDestroy()
             {
-
+                constellationLineManager.AllDestroy();
+                guideLineManager.GuideLineDestroy();
             }
 
             #region

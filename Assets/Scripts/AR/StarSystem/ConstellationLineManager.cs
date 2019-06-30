@@ -15,6 +15,8 @@ namespace AR
             private List<GameObject> connectedStars = new List<GameObject>();
             public List<List<GameObject>> constellationLinePairStars = new List<List<GameObject>>();
 
+            private const int maxLineNum = 10;
+
             private void Start()
             {
                 guideLineManager = GetComponent<GuideLineManager>();
@@ -23,11 +25,21 @@ namespace AR
 
             public void ControlLine(GameObject connectStar, GameObject nearestStar)
             {
+                if (maxLineNum == constellationLines.Count()) return;
+
                 if (guideLineManager.GuideLine != null)    // ガイドライン有
                 {
                     guideLineManager.GuideLineDestroy();        // ガイドライン削除
                     GenerateConstellationLine(connectStar);     // 星座線生成
-                    starManager.ActivateStar(connectStar);      // activeStar切り替え
+
+                    if (maxLineNum == constellationLines.Count())   // 本数がmaxになったら
+                    {
+                        starManager.Deactivate();
+                    }
+                    else
+                    {
+                        starManager.ActivateStar(connectStar);      // activeStar切り替え
+                    }
                 } else if (!constellationLines.Any() || connectedStars.Contains(nearestStar)) // 星座線無しまたはその星がすでに結ばれている
                 {
                     starManager.ActivateStar(nearestStar);  // ActiveStar変更
@@ -66,7 +78,28 @@ namespace AR
                 guideLineManager.GuideLineDestroy();    // ガイドライン削除
             }
 
+            public void Decide()
+            {
+                //planeGenerateManager.GeneratePlane(constellationLines);
+                AllDestroy();
+            }
 
+            public void AllDestroy()
+            {
+                // 星座線削除
+                foreach(GameObject constellationLine in constellationLines)
+                {
+                    Destroy(constellationLine);
+                }
+
+                // リスト初期化
+                constellationLines.Clear();
+                constellationLinePairStars.Clear();
+                connectedStars.Clear();
+
+                starManager.Deactivate();
+                guideLineManager.GuideLineDestroy();
+            }
 
             private void GenerateConstellationLine(GameObject connectStar)
             {
