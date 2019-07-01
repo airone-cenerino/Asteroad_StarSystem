@@ -390,6 +390,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2812536368892105770, guid: 181eb596e6e664c4abd4916a96b2d55b,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 132572023}
     - target: {fileID: 2812536368892105765, guid: 181eb596e6e664c4abd4916a96b2d55b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -494,21 +499,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536368892105770, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 132572023}
-    - target: {fileID: 2812536370222469069, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536368938474271, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_Name
-      value: "Setting\u7528Image"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181eb596e6e664c4abd4916a96b2d55b, type: 3}

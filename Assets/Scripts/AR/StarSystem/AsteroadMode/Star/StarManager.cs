@@ -22,11 +22,18 @@ namespace AR
                     // ActiveStarを更新する
                     public void ActivateStar(GameObject nextActiveStar)
                     {
+                        if(nextActiveStar == null)
+                        {
+                            Deactivate();
+                            return;
+                        }
+
                         if (ActiveStar != null)
                         {
                             //LastActiveStar = ActiveStar;
                             ActiveStar.GetComponent<StarInfo>().Deactivate();  // 今までのactiveStarをdisactivate
                         }
+
                         ActiveStar = nextActiveStar;
                         ActiveStar.GetComponent<StarInfo>().Activate();
                     }

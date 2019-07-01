@@ -25,6 +25,8 @@ namespace AR
 
                         foreach (GameObject line in constellationLines)
                         {
+                            if (line == null) continue;
+
                             Vector3 lineWorldPosition = GetWorldPositionFromRect(line); // 星座線のワールド座標を取得
                             float cameraZ0Distance = Camera.main.transform.position.z;
                             float reductionRatio = Mathf.Abs(cameraZ0Distance / canvas.planeDistance);

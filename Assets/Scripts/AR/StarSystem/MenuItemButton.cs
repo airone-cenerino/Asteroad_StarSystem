@@ -18,7 +18,7 @@ namespace AR
             static void ConnectStars()
             {
                 // 結ぶことのできる最長の距離はここを調整
-                float connectableMaxDistance = 0.2f;
+                float connectableMaxDistance = 0.1f;
                 // -------------------------------------
 
                 GameObject[] stars = GameObject.FindGameObjectsWithTag("Star");
@@ -26,7 +26,9 @@ namespace AR
 
                 foreach (GameObject star in stars)
                 {
+                    
                     StarInfo starInfo = star.GetComponent<StarInfo>();
+                    starInfo.connectableStars.Clear();
                     Vector2 starAnchoredPosition = star.GetComponent<RectTransform>().anchoredPosition; // 星のUI上の座標を取得(アンカー位置が原点)
                     Vector2 starPos = starAnchoredPosition / canvasSize;    // Canvas全体を(1,1)に補正
 
