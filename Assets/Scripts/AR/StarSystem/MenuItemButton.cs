@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using AR.StarSystem.AsteroadMode;
+using AR.StarSystem.AsteroadMode.Star;
 
 /*
  * 繋げる星をinspectorにアタッチする拡張関数

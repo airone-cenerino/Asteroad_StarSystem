@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using AR.StarSystem.AsteroadMode.Line;
+using AR.StarSystem.AsteroadMode.Star;
 
 /*
  * Asteroadモードの管理
@@ -21,7 +23,6 @@ namespace AR
                 private ConstellationLineManager constellationLineManager;
                 private GuideLineManager guideLineManager;
                 private StarManager starManager;
-
 
                 private GameObject lastNearestStar = null;          // 1フレーム前の一番近い星
                 private GameObject activatableNearestStar = null;   // 現フレームでの一番近い結べる星
