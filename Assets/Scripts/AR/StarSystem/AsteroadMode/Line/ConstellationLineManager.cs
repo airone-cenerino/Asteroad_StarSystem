@@ -99,6 +99,8 @@ namespace AR
 
                     public void Decide()
                     {
+                        if (connectedStars != null && constellationLines.Count == 0) return;
+
                         planeGenerateManager.GeneratePlane(constellationLines);
                         audioSource.PlayOneShot(makePlaneSound);
                         AllDestroy();

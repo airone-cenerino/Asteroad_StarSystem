@@ -12,16 +12,16 @@ namespace AR
             {
                 public class PlaneManager : MonoBehaviour
                 {
-                    // Start is called before the first frame update
-                    void Start()
-                    {
+                    private float destroyTime = 7.0f;
 
-                    }
-
-                    // Update is called once per frame
                     void Update()
                     {
+                        destroyTime -= Time.deltaTime;
 
+                        if (destroyTime < 0.0f)
+                        {
+                            Destroy(this.gameObject);
+                        }
                     }
                 }
             }
