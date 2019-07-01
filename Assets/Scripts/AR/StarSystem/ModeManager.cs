@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AR.StarSystem.AsteroadMode;
+using AR.StarSystem.TransformationMode;
 
 /*
  * モード管理
