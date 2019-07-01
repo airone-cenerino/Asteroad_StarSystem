@@ -28,6 +28,7 @@ namespace AR
                         RectTransform lineRectTransform = line.GetComponent<RectTransform>();
 
                         // Position
+                        Debug.Log(connectStar);
                         Vector2 toPosition = connectStar.GetComponent<RectTransform>().anchoredPosition;
                         Vector2 fromPosition = starManager.ActiveStar.GetComponent<RectTransform>().anchoredPosition;
                         Vector2 middlePoint = (toPosition + fromPosition) / 2;                  // 2つの星の中間地点の座標
