@@ -21,6 +21,7 @@ namespace AR
                         GameObject parent = new GameObject();                   // 全てのパネルの親
                         Rigidbody rigidbody = parent.AddComponent<Rigidbody>(); // 重力
                         rigidbody.useGravity = true;
+                        parent.AddComponent<PlaneManager>();                    // 一定時間で消えるためのスクリプトを実装する
 
                         foreach (GameObject line in constellationLines)
                         {
@@ -34,9 +35,8 @@ namespace AR
                                                                       Camera.main.transform.position.y + lineRelativCoordinate.y * reductionRatio, 0);  // 生成ポイントの計算
 
                             GameObject lineObject = Instantiate(plane, instantiatePosition, line.transform.rotation);
-                            line.AddComponent<PlaneManager>();             // 一定時間で消えるためのスクリプトを実装する
-                            lineObject.transform.localScale = new Vector3(line.GetComponent<RectTransform>().sizeDelta.x * 0.0705f, lineObject.transform.localScale.y, lineObject.transform.localScale.z);
-
+                            lineObject.transform.parent = parent.transform;
+                            lineObject.transform.localScale = new Vector3(line.GetComponent<RectTransform>().sizeDelta.x * 0.07f, lineObject.transform.localScale.y, lineObject.transform.localScale.z);
                         }
                     }
 
