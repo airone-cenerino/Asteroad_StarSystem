@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 星の管理
+ */
+
 namespace AR
 {
     namespace StarSystem
@@ -9,14 +13,14 @@ namespace AR
         public class StarManager : MonoBehaviour
         {
             public GameObject ActiveStar { get; private set; }
-            public GameObject LastActiveStar { get; private set; }
+            //public GameObject LastActiveStar { get; private set; }
 
             // ActiveStarを更新する
             public void ActivateStar(GameObject nextActiveStar)
             {
                 if (ActiveStar != null)
                 {
-                    LastActiveStar = ActiveStar;
+                    //LastActiveStar = ActiveStar;
                     ActiveStar.GetComponent<StarInfo>().Deactivate();  // 今までのactiveStarをdisactivate
                 }
                 ActiveStar = nextActiveStar;
@@ -28,7 +32,7 @@ namespace AR
             {
                 if (ActiveStar != null)
                 {
-                    LastActiveStar = ActiveStar;
+                    //LastActiveStar = ActiveStar;
                     ActiveStar.GetComponent<StarInfo>().Deactivate();
                     ActiveStar = null;
                 }

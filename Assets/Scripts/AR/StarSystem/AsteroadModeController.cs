@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+/*
+ * Asteroadモードの管理
+ */
+
 namespace AR
 {
     namespace StarSystem

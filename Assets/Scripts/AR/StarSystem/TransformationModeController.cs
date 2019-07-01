@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * 変身モードの管理
+ */
+
 namespace AR
 {
     namespace StarSystem

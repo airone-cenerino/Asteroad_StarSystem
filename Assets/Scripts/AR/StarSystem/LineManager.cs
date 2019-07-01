@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * UI上で線を引くクラスの親
+ */
+
 namespace AR
 {
     namespace StarSystem
     {
-
         public abstract class LineManager : MonoBehaviour
         {
             [SerializeField] private Transform linesParent;         // lineオブジェクトの親
@@ -14,6 +17,7 @@ namespace AR
 
             protected StarManager starManager;
 
+            // 線を作成して、オブジェクトを返す
             protected GameObject GenerateLine(GameObject connectStar)
             {
                 GameObject line = Instantiate(linePrefab, linesParent);  // 生成

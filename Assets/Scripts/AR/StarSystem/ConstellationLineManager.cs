@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/*
+ * 星座線管理
+ */
+
 namespace AR
 {
     namespace StarSystem
@@ -11,9 +15,9 @@ namespace AR
         {
             private GuideLineManager guideLineManager;
 
-            private List<GameObject> constellationLines = new List<GameObject>();
-            private List<GameObject> connectedStars = new List<GameObject>();
-            public List<List<GameObject>> constellationLinePairStars = new List<List<GameObject>>();
+            private List<GameObject> constellationLines = new List<GameObject>();                       // 星座線オブジェクトの格納
+            private List<GameObject> connectedStars = new List<GameObject>();                           // 星座線で結ばれている星を格納
+            public List<List<GameObject>> constellationLinePairStars = new List<List<GameObject>>();    // 星座線で結ばれている星をペアでそれぞれ格納
 
             private const int maxLineNum = 10;
 
@@ -40,7 +44,8 @@ namespace AR
                     {
                         starManager.ActivateStar(connectStar);      // activeStar切り替え
                     }
-                } else if (!constellationLines.Any() || connectedStars.Contains(nearestStar)) // 星座線無しまたはその星がすでに結ばれている
+                }
+                else if (!constellationLines.Any() || connectedStars.Contains(nearestStar)) // 星座線無しまたはその星がすでに結ばれている
                 {
                     starManager.ActivateStar(nearestStar);  // ActiveStar変更
                 }

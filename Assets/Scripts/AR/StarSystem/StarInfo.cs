@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 星にアタッチする
+ * 自分と結部ことのできる星を管理
+ */
+
 namespace AR
 {
     namespace StarSystem

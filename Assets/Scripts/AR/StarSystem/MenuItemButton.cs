@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/*
+ * 繋げる星をinspectorにアタッチする拡張関数
+ */
+
 namespace AR
 {
     namespace StarSystem

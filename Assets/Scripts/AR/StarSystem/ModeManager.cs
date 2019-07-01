@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * モード管理
+ * StarSystemの一番の大元
+ */
+
 namespace AR
 {
     namespace StarSystem
@@ -18,7 +23,7 @@ namespace AR
             private TransformationModeController transformationModeController;
 
             private MODE mode = MODE.Asteroad;      // 現在のモード(変身モードかアステロードモードか)
-            private bool isActivate = true;         // 変身かオブジェクトを使用可能か
+            private bool isActivate = true;         // StarSystemを使用可能か
 
             private void Start()
             {
@@ -49,7 +54,7 @@ namespace AR
                 this.mode = mode;
             }
 
-            // オブジェクト生成、星座変身をできなくする
+            // StarSystemの無効化
             public void Deactivate()
             {
                 switch (mode)
