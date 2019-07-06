@@ -209,18 +209,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2812536369340003325}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &186957205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186957203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: addab596a571ef3419e400b6853dd810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &391129108
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,36 +299,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2812536369340003325}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1125527957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125527955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: addab596a571ef3419e400b6853dd810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1617314782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2812536370006530213, guid: 181eb596e6e664c4abd4916a96b2d55b,
     type: 3}
   m_PrefabInstance: {fileID: 2812536369340003325}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1617314784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1617314782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: addab596a571ef3419e400b6853dd810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1880059288
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,41 +518,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2812536370222469069, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536368790039504, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536369027424043, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536369114009025, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536369484748969, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536370265101906, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812536370653380374, guid: 181eb596e6e664c4abd4916a96b2d55b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181eb596e6e664c4abd4916a96b2d55b, type: 3}
 --- !u!1001 &4613256043342544334
@@ -678,22 +607,22 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1036969943}
-    - target: {fileID: 4476911809960890135, guid: b4d9f1ea4bded294c9a236570bfdaced,
+    - target: {fileID: 6754470813883412950, guid: b4d9f1ea4bded294c9a236570bfdaced,
         type: 3}
       propertyPath: constellations.Array.data[0]
       value: 
       objectReference: {fileID: 1125527955}
-    - target: {fileID: 4476911809960890135, guid: b4d9f1ea4bded294c9a236570bfdaced,
+    - target: {fileID: 6754470813883412950, guid: b4d9f1ea4bded294c9a236570bfdaced,
         type: 3}
       propertyPath: constellations.Array.data[1]
       value: 
       objectReference: {fileID: 186957203}
-    - target: {fileID: 4476911809960890135, guid: b4d9f1ea4bded294c9a236570bfdaced,
+    - target: {fileID: 6754470813883412950, guid: b4d9f1ea4bded294c9a236570bfdaced,
         type: 3}
       propertyPath: constellations.Array.data[2]
       value: 
       objectReference: {fileID: 1617314782}
-    - target: {fileID: 4476911809960890135, guid: b4d9f1ea4bded294c9a236570bfdaced,
+    - target: {fileID: 6754470813883412950, guid: b4d9f1ea4bded294c9a236570bfdaced,
         type: 3}
       propertyPath: canvasRectTransform
       value: 

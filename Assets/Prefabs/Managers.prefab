@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4613256041771449641}
   - component: {fileID: 5060442576744841398}
   - component: {fileID: 4613256041771449638}
+  - component: {fileID: 6754470813883412950}
   - component: {fileID: 6745224265144806373}
   - component: {fileID: 2322670652277646608}
   - component: {fileID: 7690634092594342118}
@@ -173,6 +174,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasRectTransform: {fileID: 0}
   starJudgementDistance: 0.04
+--- !u!114 &6754470813883412950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613256041771449643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4ffdd8fe7a6a845b565819772ad0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constellationJudgeDistance: 0.12
+  constellations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  canvasRectTransform: {fileID: 0}
 --- !u!114 &6745224265144806373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,12 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726d916cbb51dae4faf23ffcdc21e718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constellationJudgeDistance: 0.12
-  constellations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  canvasRectTransform: {fileID: 0}
 --- !u!114 &501235107
 MonoBehaviour:
   m_ObjectHideFlags: 0

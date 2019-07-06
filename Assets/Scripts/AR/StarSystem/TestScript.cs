@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AR.StarSystem.TransformationMode;
+using AR.StarSystem.TransformationMode.Constellation;
 
 namespace AR
 {
@@ -24,25 +25,33 @@ namespace AR
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    modeManager.Activate(MODE.Transformation);
+                    modeManager.Activate(MODE.Transformation);      // 変身モードにする。
                 }
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    modeManager.Activate(MODE.Asteroad);
+                    modeManager.Activate(MODE.Asteroad);            // アステロードモードにする。
                 }
 
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
-                    transformationModeController.Enable(ConstelltionType.Aquila);
-                    Debug.Log(1);
+                    transformationModeController.Enable(ConstellationType.Aquila);   // わし座の解放
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
-                    transformationModeController.Enable(ConstelltionType.Lepus);
+                    transformationModeController.Enable(ConstellationType.Lepus);    // うさぎ座の解放
                 }
                 if (Input.GetKeyDown(KeyCode.Alpha3))
                 {
-                    transformationModeController.Enable(ConstelltionType.Lyra);
+                    transformationModeController.Enable(ConstellationType.Lyra);     // こと座の解放
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    modeManager.Deactivate();       // 変身、アステロードモードの強制終了
+                }
+
+                if (Input.GetKeyDown(KeyCode.Alpha5))
+                {
+                    transformationModeController.AllConstellationsDisable();     // 星座解放リセットボタン
                 }
             }
         }

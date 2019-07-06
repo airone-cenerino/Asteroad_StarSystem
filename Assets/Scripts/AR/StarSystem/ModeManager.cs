@@ -52,8 +52,14 @@ namespace AR
             // 引数のモードに変更
             public void Activate(MODE mode)
             {
+                Deactivate();
                 isActivate = true;
                 this.mode = mode;
+
+                if(mode == MODE.Transformation)
+                {
+                    transformationModeController.Init();
+                }
             }
 
             // StarSystemの無効化
